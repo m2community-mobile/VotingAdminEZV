@@ -1,0 +1,6 @@
+framework module Pods_VotingAdminEZV {
+  umbrella header "Pods-VotingAdminEZV-umbrella.h"
+
+  export *
+  module * { export * }
+}
