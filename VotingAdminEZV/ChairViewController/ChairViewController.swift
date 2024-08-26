@@ -318,7 +318,7 @@ extension ChairViewController : UITableViewDelegate, UITableViewDataSource, Chai
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChairTableViewCell", for: indexPath) as! ChairTableViewCell
         cell.selectionStyle = .none
-
+        
         cell.indexPath = indexPath
         cell.delegate = self
         
@@ -329,10 +329,13 @@ extension ChairViewController : UITableViewDelegate, UITableViewDataSource, Chai
         
         let question = self.questionArray[indexPath.row]["question"] as? String ?? ""
         let sid = self.questionArray[indexPath.row]["sid"] as? String ?? ""
-
+        let readed = self.questionArray[indexPath.row]["chair_readed"] as? String ?? ""
         let cellHeight = cell.questionUpdate(question: question)
         self.heightInfo[sid] = cellHeight
 
+        
+        print("readedreadedreadedreadedreaded:\(readed)")
+        
         ////
         let signdate = self.questionArray[indexPath.row]["signdate"] as? String ?? ""
         if let cgfloat_signdate = signdate.toCGFloat() {
@@ -346,6 +349,35 @@ extension ChairViewController : UITableViewDelegate, UITableViewDataSource, Chai
         
         let isView = self.questionArray[indexPath.row]["view"] as? String ?? ""
         cell.isButtonSelected = isView == "Y"
+        
+        
+        if let chairReaded = self.questionArray[indexPath.row]["chair_readed"] as? String,
+           chairReaded.contains(chairReaded) {
+            
+            
+            if readed == "N" {
+                cell.readLabel.isHidden = false
+                cell.rellyReadLabel.isHidden = true
+            } else {
+                cell.readLabel.isHidden = true
+                cell.rellyReadLabel.isHidden = false
+            }
+            
+        } else {
+            cell.rellyReadLabel.isHidden = true
+            
+        }
+        
+        
+        
+//        if readed == "N" {
+//            cell.readLabel.isHidden = false
+//            cell.rellyReadLabel.isHidden = true
+//        } else {
+//            cell.readLabel.isHidden = true
+//            cell.rellyReadLabel.isHidden = false
+//        }
+        
         
         
         

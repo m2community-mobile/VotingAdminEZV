@@ -41,6 +41,12 @@ class ChairTableViewCell: UITableViewCell {
     @IBOutlet weak var selectButtonLabelBackView: UIView!
     @IBOutlet weak var selectButtonLabel: UILabel!
     
+    @IBOutlet weak var readLabel: UIImageView!
+    
+    @IBOutlet weak var rellyReadLabel: UIImageView!
+    
+    
+    
     var questionlabelOriginalY : CGFloat = 0
     
     var contentWidth : CGFloat = 0
@@ -80,6 +86,7 @@ class ChairTableViewCell: UITableViewCell {
                     
                     if lanLabel.text == "한국어" {
                         self.selectButtonLabel.text = "선택됨"
+                        
                     }
                     
                     if lanLabel.text == "English" {
@@ -115,6 +122,9 @@ class ChairTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveTestNotification(_:)), name: NSNotification.Name("change"), object: nil)
         
         contentWidth = lectureBackView.frame.size.width
@@ -167,6 +177,8 @@ class ChairTableViewCell: UITableViewCell {
     @IBAction func selectButtonPressed(_ sender: UIButton) {
         print("selectButtonPressed")
         self.delegate?.ChairTableViewCell?(self, indexPath: self.indexPath, selectButtonPressed: sender)
+        
+        
     }
     
     

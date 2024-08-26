@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_view" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-Em-cOm">
-                    <rect key="frame" x="42" y="20" width="58" height="64"/>
+                    <rect key="frame" x="42" y="20" width="58" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqX-e6-2Xz">
@@ -93,6 +93,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_view_o" translatesAutoresizingMaskIntoConstraints="NO" id="p2h-qm-KTY">
+                    <rect key="frame" x="42" y="20" width="58" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -103,6 +107,8 @@
                 <outlet property="lectureNoticeLabel" destination="tSb-jl-zpC" id="y8e-s5-dhL"/>
                 <outlet property="lectureNoticeLabelBackView" destination="MzU-X7-30S" id="sZM-Bo-cDp"/>
                 <outlet property="questionlabel" destination="Ldy-98-19O" id="U5M-hf-OQ4"/>
+                <outlet property="readLabel" destination="J6n-Em-cOm" id="gsf-yW-zCv"/>
+                <outlet property="rellyReadLabel" destination="p2h-qm-KTY" id="Imp-Yt-cMV"/>
                 <outlet property="selectButton" destination="S5M-2L-kQw" id="Dkk-jj-Hdn"/>
                 <outlet property="selectButtonLabel" destination="1U5-XC-2TP" id="Xod-wy-SS0"/>
                 <outlet property="selectButtonLabelBackView" destination="fdV-PJ-LTp" id="QUG-qe-hoY"/>
@@ -114,5 +120,6 @@
     </objects>
     <resources>
         <image name="icon_view" width="38" height="42"/>
+        <image name="icon_view_o" width="19" height="21"/>
     </resources>
 </document>
